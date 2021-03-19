@@ -12,7 +12,7 @@ public interface ProjectMapper {
 	public int projectCount() throws Exception;
 	public List<Project> projectList() throws Exception;
 	public Project projectDetail(int pj_id) throws Exception;
-	public void projectPost(Project project) throws Exception;
-	public void projectDelete(int pj_id) throws Exception;
+	public int projectPost(Project project) throws Exception;
+	public int projectDelete(int pj_id) throws Exception;
 
 }

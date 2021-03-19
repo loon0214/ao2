@@ -7,6 +7,7 @@ public class Project {
 	private int pj_id;
 	private String pj_name;
 	private String pj_type;
+	private String pj_content;
 	private Date reg_date;
 	
 	public int getPj_id() {
@@ -27,10 +28,18 @@ public class Project {
 	public void setPj_type(String pj_type) {
 		this.pj_type = pj_type;
 	}
+	public String getPj_content() {
+		return pj_content;
+	}
+	public void setPj_content(String pj_content) {
+		this.pj_content = pj_content;
+	}
 	public Date getReg_date() {
 		return reg_date;
 	}
 	public void setReg_date(Date reg_date) {
 		this.reg_date = reg_date;
 	}
+	
+	
 }

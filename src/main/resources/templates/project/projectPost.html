@@ -10,16 +10,28 @@
 <br>
 
 <div class="container-fluid">
-    <table class="table table-hover">
-        <tr>
-            <th>번호</th>
-            <th>프로젝트명</th>
-            <th>프로젝트 유형</th>
-            <th>등록일</th>
-        </tr>
-		
-    </table>
+    <form action="/insertProc" method="post">
+      <div class="form-group">
+        <label for="subject">프로젝트 명</label>
+        <input type="text" class="form-control" id="pj_id" name="pj_id" placeholder="프로젝트 제목을 입력하세요.">
+      </div>
+      
+      <div class="form-group">
+        <label for="pj_type">프로젝트 유형</label>
+        <input type='radio' id="pj_type" name='pj_type' value='type1' /> 기타
+        <input type='radio' id="pj_type" name='pj_type' value='type2' /> 운영
+        <input type='radio' id="pj_type" name='pj_type' value='type3' /> 개발
+      </div>
+      
+      <div class="form-group">
+        <label for="content">내용</label>
+        <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">추가</button>
+    </form>
 </div>
+
+
 
 </th:block>
 </html>

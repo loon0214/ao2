@@ -20,7 +20,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM PROJECT
 		WHERE PJ_ID = #{pj_id}
 	</select>
-	
+
+	<insert id="projectPost" parameterType="ao2.vo.Project">
+	INSERT INTO PROJECT (PJ_ID, PJ_NAME, PJ_TYPE, PJ_CONTENT, REG_DATE)
+				VALUES (#{pj_id}, #{pj_name}, #{pj_type}, #{pj_content}, now())
+	</insert>
+
 	<delete id="projectDelete" parameterType="int">
 		DELETE FROM PROJECT
 		WHERE PJ_ID = #{pj_id}

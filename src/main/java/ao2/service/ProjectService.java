@@ -17,6 +17,9 @@ public class ProjectService {
 	
 	public List<Project> projectListService() throws Exception{
 		return mapper.projectList();
-		
+	}
+
+	public int projectPostService(Project project) throws Exception{
+		return mapper.projectPost(project);
 	}
 }
