@@ -10,10 +10,10 @@
 <br>
 
 <div class="container-fluid">
-    <form action="/projectPostProc" method="post">
+    <form action="projectPost" method="post">
       <div class="form-group">
         <label for="subject">프로젝트 명</label>
-        <input type="text" class="form-control" id="pj_id" name="pj_id" placeholder="프로젝트 제목을 입력하세요." required> 
+        <input type="text" class="form-control" id="pj_name" name="pj_name" placeholder="프로젝트 제목을 입력하세요." required> 
       </div>
       
       <div class="form-group">
@@ -25,7 +25,7 @@
       
       <div class="form-group">
         <label for="content">내용</label>
-        <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+        <textarea class="form-control" id="pj_content" name="pj_content" rows="3" required></textarea>
       </div>
       <button type="submit" class="btn btn-primary">추가</button>
     </form>

@@ -3,10 +3,10 @@ package ao2.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,28 +28,15 @@ public class ProjectController {
 		return mv;
 	}
 		
-//	@RequestMapping("project/projectPost")
-//	private String projectPostForm() {
-//		System.out.println("project post");
-//		return "project/projectPost";
-//	}
-//	
-	@RequestMapping("/projectPostProc")
-	private int projectPostProc(HttpServletRequest request) throws Exception{
-		Project project = (Project) request.getParameterMap();
-		System.out.println("project post process");
-		return service.projectPostService(project);
+	@GetMapping("project/projectPost")
+	public String projectPost() {
+		return "project/projectPost";
 	}
 	
-	@RequestMapping("project/projectPost")
-	public String projectPost(Model model) {
-		
-		String pj_id = "제목";
-		String pj_content = "내용";
-		
-		model.addAttribute("t", pj_id);
-		model.addAttribute("c", pj_content);
-		
-		return "project/projectPost";
+	@PostMapping("project/projectPost")
+	public String post(Project project) throws Exception {
+		service.projectPostService(project);
+		System.out.println("project post");
+		return "redirect:/main";
 	}
 }
